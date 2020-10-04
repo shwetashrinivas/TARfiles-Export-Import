@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+
+  reviewservice:
+    image:
+    restart: always
+    hostname: localhost
+    network_mode: "host"
+    ports:
+      - 8090:8090
+
+  mongodb:
+    image: mongo
+    restart: always
+    hostname: localhost
+    network_mode: host
+    container_name: tar_import_export
+    volumes:
+      - ./tarstorage:/data/db
+    ports:
+      - 27017:27017 
