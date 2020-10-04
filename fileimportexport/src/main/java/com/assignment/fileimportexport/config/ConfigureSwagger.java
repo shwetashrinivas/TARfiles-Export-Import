@@ -13,10 +13,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 public class ConfigureSwagger {
     @Bean
-    public Docket orderApi() {
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.assignment.fileimportexport.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.assignment.fileimportexport"))
                 .paths(PathSelectors.regex("/tar/.*"))
                 .build();
     }

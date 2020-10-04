@@ -2,8 +2,8 @@ version: '2'
 
 services:
 
-  reviewservice:
-    image:
+  tarimportexport:
+    image: shwetashrinivas/tarimportexport:2.0
     restart: always
     hostname: localhost
     network_mode: "host"
@@ -15,8 +15,8 @@ services:
     restart: always
     hostname: localhost
     network_mode: host
-    container_name: tar_import_export
+    container_name: mongo-tarstore
     volumes:
-      - ./tarstorage:/data/db
+      - ./tarfiledata:/data/db
     ports:
-      - 27017:27017 
+      - 27017:27017
