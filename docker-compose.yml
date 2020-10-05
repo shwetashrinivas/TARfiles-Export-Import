@@ -2,13 +2,13 @@ version: '2'
 
 services:
 
-  tarimportexport:
-    image: shwetashrinivas/tarimportexport:2.0
+  fileimportexport:
+    image: fileimportexport
     restart: always
     hostname: localhost
     network_mode: "host"
     ports:
-      - 8090:8090
+      - 8080:8080
 
   mongodb:
     image: mongo
@@ -16,7 +16,5 @@ services:
     hostname: localhost
     network_mode: host
     container_name: mongo-tarstore
-    volumes:
-      - ./tarfiledata:/data/db
     ports:
       - 27017:27017

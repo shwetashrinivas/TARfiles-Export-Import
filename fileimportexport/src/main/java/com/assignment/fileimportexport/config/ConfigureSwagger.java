@@ -16,7 +16,7 @@ public class ConfigureSwagger {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.assignment.fileimportexport"))
+                .apis(RequestHandlerSelectors.basePackage("com.assignment.fileimportexport.controller"))
                 .paths(PathSelectors.regex("/tar/.*"))
                 .build();
     }
